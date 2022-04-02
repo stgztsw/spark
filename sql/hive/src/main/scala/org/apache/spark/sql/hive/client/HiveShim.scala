@@ -1204,6 +1204,7 @@ private[client] class Shim_v2_1 extends Shim_v2_0 {
       JBoolean.TYPE,
       JBoolean.TYPE,
       JBoolean.TYPE,
+      JBoolean.TYPE,
       JBoolean.TYPE)
   private lazy val loadTableMethod =
     findMethod(
@@ -1255,7 +1256,7 @@ private[client] class Shim_v2_1 extends Shim_v2_0 {
       isSkewedStoreAsSubdir: Boolean,
       isSrcLocal: Boolean): Unit = {
     loadPartitionMethod.invoke(hive, loadPath, tableName, partSpec, replace: JBoolean,
-      inheritTableSpecs: JBoolean, isSkewedStoreAsSubdir: JBoolean,
+      inheritTableSpecs: JBoolean, JBoolean.FALSE, isSkewedStoreAsSubdir: JBoolean,
       isSrcLocal: JBoolean, isAcid, hasFollowingStatsTask)
   }
 
